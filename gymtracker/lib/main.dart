@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => GymAppState(),
       child: MaterialApp(
-        title: 'Namer App',
+        title: 'Gym Tracking App',
         home: NavigationPage(),
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
