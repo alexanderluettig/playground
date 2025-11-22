@@ -20,7 +20,11 @@ class MainApp extends StatelessWidget {
         title: 'Gym Tracking App',
         home: NavigationPage(),
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.red),
+          colorScheme: ColorScheme.fromSeed(
+            seedColor: Colors.deepOrange,
+            brightness: Brightness.dark,
+          ),
+          brightness: Brightness.dark,
         ),
       ),
     );
