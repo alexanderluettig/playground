@@ -3,7 +3,7 @@ import 'package:gymtracker/features/exercises/exercises.dart';
 import 'package:gymtracker/features/history/history.dart';
 import 'package:gymtracker/features/plans/plans.dart';
 import 'package:gymtracker/features/home/home.dart';
-import 'package:gymtracker/features/session/session.dart';
+import 'package:gymtracker/features/Workout/Workout.dart';
 
 class NavigationPage extends StatefulWidget {
   @override
@@ -22,7 +22,7 @@ class _NavigationPageState extends State<NavigationPage> {
       case 1:
         page = PlansPage();
       case 2:
-        page = SessionPage();
+        page = WorkoutPage();
       case 3:
         page = ExercisesPage();
       case 4:
@@ -48,7 +48,7 @@ class _NavigationPageState extends State<NavigationPage> {
                 ),
                 NavigationDestination(
                   icon: Icon(Icons.timer),
-                  label: 'Session',
+                  label: 'Workout',
                 ),
                 NavigationDestination(
                   icon: Icon(Icons.fitness_center),

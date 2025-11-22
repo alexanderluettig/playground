@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class SessionPage extends StatelessWidget {
+class WorkoutPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text('Session Page'));
+    return Center(child: Text('Workout Page'));
   }
 }
