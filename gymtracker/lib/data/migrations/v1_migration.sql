@@ -1,3 +1,4 @@
+-- Initial Migration Script for Gym Tracker Database
 -- Create Profile Table
 CREATE TABLE profiles (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
