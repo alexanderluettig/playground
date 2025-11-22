@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gymtracker/features/exercises/exercises.dart';
 import 'package:gymtracker/features/history/history.dart';
 import 'package:gymtracker/features/plans/plans.dart';
 import 'package:gymtracker/features/home/home.dart';
@@ -23,6 +24,8 @@ class _NavigationPageState extends State<NavigationPage> {
       case 2:
         page = SessionPage();
       case 3:
+        page = ExercisesPage();
+      case 4:
         page = HistoryPage();
       default:
         throw UnimplementedError('no widget for $selectedIndex');
@@ -46,6 +49,10 @@ class _NavigationPageState extends State<NavigationPage> {
                 NavigationDestination(
                   icon: Icon(Icons.timer),
                   label: 'Session',
+                ),
+                NavigationDestination(
+                  icon: Icon(Icons.fitness_center),
+                  label: 'Exercises',
                 ),
                 NavigationDestination(
                   icon: Icon(Icons.history),

@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:gymtracker/dependencies.dart';
 import 'package:gymtracker/features/navigation/navigation.dart';
 import 'package:provider/provider.dart';
 import 'core/appstate.dart';
 
-void main() {
-  runApp(MyApp());
+void main() async {
+  await setupDependencies();
+  runApp(const MainApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class MainApp extends StatelessWidget {
+  const MainApp({super.key});
 
   @override
   Widget build(BuildContext context) {
