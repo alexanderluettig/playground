@@ -12,6 +12,7 @@ Future<void> setupDatabase(GetIt getIt) async {
     return openDatabase(
       path,
       version: dbVersion,
+      onConfigure: (db) => db.execute('PRAGMA foreign_keys = ON'),
       onCreate: (db, version) async {
         await applyMigrations(db, 0, dbVersion);
       },

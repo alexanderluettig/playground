@@ -3,7 +3,7 @@
 CREATE TABLE profiles (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
-    weight REAL,
+    weight REAL
 );
 
 -- Create Weight History Table
@@ -20,7 +20,7 @@ CREATE TABLE exercises (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
     notes TEXT,
-    type INTEGER NOT NULL CHECK(type BETWEEN 0 AND 3) -- only between 0-3
+    type INTEGER NOT NULL CHECK(type BETWEEN 0 AND 2), -- only between 0-2
     default_reps INTEGER CHECK(default_reps > 0),
     default_sets INTEGER CHECK(default_sets > 0),
     default_exercise_value REAL CHECK(default_exercise_value >= 0)
@@ -42,10 +42,12 @@ CREATE TABLE plan_has_exercise (
     exercise_id INTEGER NOT NULL,
     sets INTEGER NOT NULL CHECK(sets > 0),
     reps INTEGER NOT NULL CHECK(reps > 0),
-    exercise_value REAL CHECK(exercise_value >= 0),
+    exercise_value REAL NOT NULL CHECK(exercise_value >= 0),
     exercise_order INTEGER NOT NULL CHECK(exercise_order >= 0),
     FOREIGN KEY (plan_id) REFERENCES plans(id),
-    FOREIGN KEY (exercise_id) REFERENCES exercises(id)
+    FOREIGN KEY (exercise_id) REFERENCES exercises(id),
+    UNIQUE (plan_id, exercise_id),
+    UNIQUE (plan_id, exercise_order)
 );
 
 -- Create Workout History Table
