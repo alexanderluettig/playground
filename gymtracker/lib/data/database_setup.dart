@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
 import 'package:gymtracker/data/dbconfig.dart';
@@ -8,6 +9,12 @@ Future<void> setupDatabase(GetIt getIt) async {
   getIt.registerSingletonAsync<Database>(() async {
     final dbPath = await getDatabasesPath();
     final path = join(dbPath, 'gymtracker.db');
+
+    const isDebug = kDebugMode;
+
+    if (isDebug) {
+      await deleteDatabase(path); // DB-File löschen
+    }
 
     return openDatabase(
       path,

@@ -3,7 +3,7 @@
 CREATE TABLE profiles (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     name TEXT NOT NULL,
-    weight REAL
+    weightGoal REAL
 );
 
 -- Create Weight History Table

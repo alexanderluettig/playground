@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
-      create: (context) => GymAppState(),
+      create: (context) => getIt<AppState>(),
       child: MaterialApp(
         title: 'Gym Tracking App',
         home: NavigationPage(),
